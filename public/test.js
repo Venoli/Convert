@@ -5,6 +5,7 @@
 }
 
 async  function convert(text){
+    setUpImages();
     document.getElementById('homePage').innerHTML = text
 
     var images = document.querySelectorAll("img")
@@ -46,5 +47,10 @@ function save(){
         element.click();
 
         document.body.removeChild(element);
+
+}
+function setUpImages(){
+    console.log(document.getElementById("img_directory").files[0]);
+    console.log(URL.createObjectURL(document.getElementById("img_directory").files[0]));
 
 }
