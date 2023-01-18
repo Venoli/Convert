@@ -12,21 +12,21 @@ async  function convert(text){
     var doneCount = 0;
     for (let contentChild of images){
         await asycronouseProcess();
-         function asycronouseProcess(){
-//             var reader = new FileReader();
 
-//             fetch(contentChild.src).then(function(response) {
-//                 return response.blob();
-//             }).then( async function(myBlob) {
-//                 await reader.readAsDataURL(myBlob);
-//                 var baseString;
-//                 reader.onloadend = await function () {
-//                     baseString = reader.result;
-//                     doneCount++
-//                     console.log("image " + doneCount + " done");
-//                     contentChild.src = baseString
-//                     reader.abort()
-//                 }});
+         function asycronouseProcess(){
+            var reader = new FileReader();
+            fetch("https://convertbase64.web.app/"+contentChild.src).then(function(response) {
+                return response.blob();
+            }).then( async function(myBlob) {
+                await reader.readAsDataURL(myBlob);
+                var baseString;
+                reader.onloadend = await function () {
+                    baseString = reader.result;
+                    doneCount++
+                    console.log("image " + doneCount + " done");
+                    contentChild.src = baseString
+                    reader.abort()
+                }});
          }
 
 
