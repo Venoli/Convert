@@ -1,44 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src=
-                    "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-    </script>
-    <script src="./test.js"></script>
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-analytics.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
+  <script src=
+                  "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+  </script>
+  <script src="./test.js"></script>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
 
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        const firebaseConfig = {
-            apiKey: "AIzaSyD42u7dkHXtz2Txmo9LzA0YUkiWwB0KSwU",
-            authDomain: "convertbase64.firebaseapp.com",
-            projectId: "convertbase64",
-            storageBucket: "convertbase64.appspot.com",
-            messagingSenderId: "845419037107",
-            appId: "1:845419037107:web:e7736cc68901c5db298bc6",
-            measurementId: "G-18895QEBCJ"
-        };
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyD42u7dkHXtz2Txmo9LzA0YUkiWwB0KSwU",
+      authDomain: "convertbase64.firebaseapp.com",
+      projectId: "convertbase64",
+      storageBucket: "convertbase64.appspot.com",
+      messagingSenderId: "845419037107",
+      appId: "1:845419037107:web:e7736cc68901c5db298bc6",
+      measurementId: "G-18895QEBCJ"
+    };
 
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-    </script>
-<!--    <link rel="stylesheet" href="./styles.css">-->
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+  <!--    <link rel="stylesheet" href="./styles.css">-->
 </head>
 <body>
 
 <p>Upload .html file <input type="file" id="html_file"></p>
 <p>Upload images folder <input type="file" webkitdirectory directory id="img_directory"></p>
 <button onclick="loadHTML()" >
-    Convert
+  Convert
 </button>
 <button onclick="save()" >
-    Save
+  Save
 </button>
 <div id="homePage">
 </div>
