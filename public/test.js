@@ -14,7 +14,10 @@ async  function convert(text){
 
     const imgHash = {};
     for (const file of imageFiles) {
-        imgHash[file.webkitRelativePath] = file;
+        imgHash["https://convertbase64.web.app/"+file.webkitRelativePath] = file;
+       // imgHash["http://localhost:63342/Convert/untitled/public/"+file.webkitRelativePath] = file;
+
+        console.log("https://convertbase64.web.app/"+file.webkitRelativePath)
     }
 
     for (let contentChild of images){
@@ -23,7 +26,7 @@ async  function convert(text){
 
          async function asycronouseProcess() {
             var reader = new FileReader();
-            console.log(contentChild.src)
+             console.log("Image.src paths from original html" + contentChild.src)
             console.log(imgHash[contentChild.src])
                 await reader.readAsDataURL(imgHash[contentChild.src])
 
@@ -31,7 +34,7 @@ async  function convert(text){
                 reader.onloadend = await function () {
                     baseString = reader.result;
                     doneCount++
-                    console.log("image " + doneCount + " done");
+                    console.log(doneCount + " image done");
                     contentChild.src = baseString
                     reader.abort()
                 };
@@ -41,7 +44,6 @@ async  function convert(text){
 
 
     }
-console.log(document.getElementById("html_file").value)
 }
 
 function save(){
@@ -59,9 +61,4 @@ function save(){
         document.body.removeChild(element);
 
 }
-function setUpImages(){
-    console.log("hi")
-    console.log(document.getElementById("img_directory").files[0]);
-    console.log(URL.createObjectURL(document.getElementById("img_directory").files[0]));
 
-}
