@@ -11,17 +11,22 @@ async  function convert(text){
     var images = document.querySelectorAll("img")
     var doneCount = 0;
     var imageFiles = document.getElementById("img_directory").files;
+
+    const imgHash = {};
+    for (const file of imageFiles) {
+        imgHash[file.webkitRelativePath] = file;
+    }
+
     for (let contentChild of images){
-        contentChild.src = "https://convertbase64.web.app/"+contentChild.src
 
         await asycronouseProcess();
 
-         function asycronouseProcess(){
+         async function asycronouseProcess() {
             var reader = new FileReader();
-            fetch("https://convertbase64.web.app/"+contentChild.src).then(function(response) {
-                return response.blob();
-            }).then( async function(myBlob) {
-                await reader.readAsDataURL(imageFiles[0]);
+            console.log(contentChild.src)
+            console.log(imgHash[contentChild.src])
+                await reader.readAsDataURL(imgHash[contentChild.src])
+
                 var baseString;
                 reader.onloadend = await function () {
                     baseString = reader.result;
@@ -29,7 +34,7 @@ async  function convert(text){
                     console.log("image " + doneCount + " done");
                     contentChild.src = baseString
                     reader.abort()
-                }});
+                };
 
 
          }
