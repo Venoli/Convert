@@ -1,1 +1,13 @@
 .elements   {display: inline-block}
+html,body {
+    height: 100%;
+}
+
+footer {
+    margin-top: auto;
+}
+body{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
