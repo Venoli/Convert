@@ -12,7 +12,7 @@ async  function convert(text){
     var doneCount = 0;
     for (let contentChild of images){
         await asycronouseProcess();
-        //  function asycronouseProcess(){
+         function asycronouseProcess(){
         //     var reader = new FileReader();
         //
         //     fetch(contentChild.src).then(function(response) {
@@ -27,7 +27,7 @@ async  function convert(text){
         //             contentChild.src = baseString
         //             reader.abort()
         //         }});
-        // }
+         }
 
 
     }
@@ -50,6 +50,7 @@ function save(){
 
 }
 function setUpImages(){
+    console.log("hi")
     console.log(document.getElementById("img_directory").files[0]);
     console.log(URL.createObjectURL(document.getElementById("img_directory").files[0]));
 
