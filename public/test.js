@@ -13,20 +13,20 @@ async  function convert(text){
     for (let contentChild of images){
         await asycronouseProcess();
          function asycronouseProcess(){
-            var reader = new FileReader();
+//             var reader = new FileReader();
 
-            fetch(contentChild.src).then(function(response) {
-                return response.blob();
-            }).then( async function(myBlob) {
-                await reader.readAsDataURL(myBlob);
-                var baseString;
-                reader.onloadend = await function () {
-                    baseString = reader.result;
-                    doneCount++
-                    console.log("image " + doneCount + " done");
-                    contentChild.src = baseString
-                    reader.abort()
-                }});
+//             fetch(contentChild.src).then(function(response) {
+//                 return response.blob();
+//             }).then( async function(myBlob) {
+//                 await reader.readAsDataURL(myBlob);
+//                 var baseString;
+//                 reader.onloadend = await function () {
+//                     baseString = reader.result;
+//                     doneCount++
+//                     console.log("image " + doneCount + " done");
+//                     contentChild.src = baseString
+//                     reader.abort()
+//                 }});
          }
 
 
