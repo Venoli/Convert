@@ -1,45 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script src=
-                  "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-  </script>
-  <script src="./test.js"></script>
-  <script type="module">
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-analytics.js";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
+    <title>Convert to Base 64</title>
+    <META NAME="author" CONTENT="Venoli Gamage">
+    <link rel="stylesheet" href="style.css">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
 
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    const firebaseConfig = {
-      apiKey: "AIzaSyD42u7dkHXtz2Txmo9LzA0YUkiWwB0KSwU",
-      authDomain: "convertbase64.firebaseapp.com",
-      projectId: "convertbase64",
-      storageBucket: "convertbase64.appspot.com",
-      messagingSenderId: "845419037107",
-      appId: "1:845419037107:web:e7736cc68901c5db298bc6",
-      measurementId: "G-18895QEBCJ"
-    };
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+    <script src="./test.js"></script>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import {initializeApp} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+        import {getAnalytics} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
 
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-  </script>
-  <!--    <link rel="stylesheet" href="./styles.css">-->
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyD42u7dkHXtz2Txmo9LzA0YUkiWwB0KSwU",
+            authDomain: "convertbase64.firebaseapp.com",
+            projectId: "convertbase64",
+            storageBucket: "convertbase64.appspot.com",
+            messagingSenderId: "845419037107",
+            appId: "1:845419037107:web:e7736cc68901c5db298bc6",
+            measurementId: "G-18895QEBCJ"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
+    <!--    <link rel="stylesheet" href="./styles.css">-->
+
 </head>
 <body>
+<div id="form">
+    <h1>Convert All Images to Base 64</h1>
+    <div class="elements">
+        <p>Upload .html file <input type="file" id="html_file"></p>
+    </div>
+    <div class="elements">
+        <p>Upload images folder <input type="file" webkitdirectory directory id="img_directory"></p>
+    </div>
+    <div class="elements">
+        <button onclick="loadHTML()">
+            Convert
+        </button>
+        <a class="waves-effect waves-light btn-small">Button</a>
 
-<p>Upload .html file <input type="file" id="html_file"></p>
-<p>Upload images folder <input type="file" webkitdirectory directory id="img_directory"></p>
-<button onclick="loadHTML()" >
-  Convert
-</button>
-<button onclick="save()" >
-  Save
-</button>
+    </div>
+    <div class="elements">
+        <button onclick="save()">
+            Save
+        </button>
+    </div>
+</div>
+
 <div id="homePage">
 </div>
 </body>
